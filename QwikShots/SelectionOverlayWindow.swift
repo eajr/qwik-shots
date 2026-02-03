@@ -23,7 +23,6 @@ final class SelectionOverlayWindow: NSWindow {
 
         let selectionView = SelectionOverlayView(
             frame: NSRect(origin: .zero, size: contentRect.size),
-            screen: screen,
             frozenImage: frozenImage,
             onSelection: onSelection
         )
@@ -34,15 +33,12 @@ final class SelectionOverlayWindow: NSWindow {
 }
 
 final class SelectionOverlayView: NSView {
-    private let screen: NSScreen
     private let frozenImage: NSImage?
     private let onSelection: (NSImage?) -> Void
-    private var startPointWindow: NSPoint?
-    private var selectionRectWindow: NSRect?
+    private var startPoint: NSPoint?
     private var selectionRect: NSRect?
 
-    init(frame: NSRect, screen: NSScreen, frozenImage: NSImage?, onSelection: @escaping (NSImage?) -> Void) {
-        self.screen = screen
+    init(frame: NSRect, frozenImage: NSImage?, onSelection: @escaping (NSImage?) -> Void) {
         self.frozenImage = frozenImage
         self.onSelection = onSelection
         super.init(frame: frame)
@@ -57,33 +53,27 @@ final class SelectionOverlayView: NSView {
     override var isFlipped: Bool { true }
 
     override func mouseDown(with event: NSEvent) {
-        startPointWindow = event.locationInWindow
-        selectionRectWindow = NSRect(origin: startPointWindow ?? .zero, size: .zero)
-        selectionRect = selectionRectWindow.map { convert($0, from: nil) }
+        let point = convert(event.locationInWindow, from: nil)
+        startPoint = point
+        selectionRect = NSRect(origin: point, size: .zero)
         needsDisplay = true
     }
 
     override func mouseDragged(with event: NSEvent) {
-        guard let startPointWindow else { return }
-        let currentWindow = event.locationInWindow
-        let windowRect = SelectionOverlayView.rect(from: startPointWindow, to: currentWindow)
-        selectionRectWindow = windowRect
-        selectionRect = convert(windowRect, from: nil)
+        guard let startPoint else { return }
+        let currentPoint = convert(event.locationInWindow, from: nil)
+        let rect = SelectionOverlayView.rect(from: startPoint, to: currentPoint)
+        selectionRect = rect.intersection(bounds)
         needsDisplay = true
     }
 
     override func mouseUp(with event: NSEvent) {
-        guard let selectionRectWindow else {
-            onSelection(nil)
-            return
-        }
-
-        if selectionRectWindow.width < 2 || selectionRectWindow.height < 2 {
-            onSelection(nil)
-            return
-        }
-
         guard let selectionRect else {
+            onSelection(nil)
+            return
+        }
+
+        if selectionRect.width < 2 || selectionRect.height < 2 {
             onSelection(nil)
             return
         }
@@ -135,26 +125,17 @@ final class SelectionOverlayView: NSView {
         let viewSize = bounds.size
         guard viewSize.width > 0, viewSize.height > 0 else { return nil }
 
+        // Scale from view coordinates (points) to CGImage coordinates (pixels)
         let scaleX = CGFloat(cgImage.width) / viewSize.width
         let scaleY = CGFloat(cgImage.height) / viewSize.height
 
-        let menuBarHeight = max(0, screen.frame.maxY - screen.visibleFrame.maxY)
-        let menuBarAdjustment = menuBarHeight * 0.7
-        let maxY = max(0, viewSize.height - rectInView.size.height)
-        let yTopAdjusted = min(maxY, rectInView.origin.y + menuBarAdjustment)
-
-        let x = rectInView.origin.x * scaleX
-        let yTop = yTopAdjusted * scaleY
-        let width = rectInView.size.width * scaleX
-        let height = rectInView.size.height * scaleY
-
-        let y = CGFloat(cgImage.height) - (yTop + height)
-
+        // Simple scaling - NO FLIP needed
+        // Both isFlipped NSView and CGImage use top-left origin with Y increasing downward
         let cropRect = CGRect(
-            x: x.rounded(.down),
-            y: y.rounded(.down),
-            width: width.rounded(.up),
-            height: height.rounded(.up)
+            x: floor(rectInView.origin.x * scaleX),
+            y: floor(rectInView.origin.y * scaleY),
+            width: ceil(rectInView.size.width * scaleX),
+            height: ceil(rectInView.size.height * scaleY)
         )
 
         let imageBounds = CGRect(x: 0, y: 0, width: cgImage.width, height: cgImage.height)
