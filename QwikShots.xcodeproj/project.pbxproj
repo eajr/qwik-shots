@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4E5F60718293A4B40 /* QwikShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B11 /* QwikShotsApp.swift */; };
+		A1B2C3D4E5F60718293A4B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B12 /* AppDelegate.swift */; };
+		A1B2C3D4E5F60718293A4B42 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B13 /* HotKeyManager.swift */; };
+		A1B2C3D4E5F60718293A4B43 /* CaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B14 /* CaptureCoordinator.swift */; };
+		A1B2C3D4E5F60718293A4B44 /* SelectionOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B15 /* SelectionOverlayWindow.swift */; };
+		A1B2C3D4E5F60718293A4B45 /* PreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B16 /* PreviewWindowController.swift */; };
+		A1B2C3D4E5F60718293A4B46 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B17 /* PreviewView.swift */; };
+		A1B2C3D4E5F60718293A4B47 /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B18 /* PreviewViewModel.swift */; };
+		A1B2C3D4E5F60718293A4B48 /* BackgroundCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B19 /* BackgroundCatalog.swift */; };
+		A1B2C3D4E5F60718293A4B49 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B1A /* ImageRenderer.swift */; };
+		A1B2C3D4E5F60718293A4B4A /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B1C /* Resources */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D4E5F60718293A4B10 /* QwikShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = QwikShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F60718293A4B11 /* QwikShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QwikShotsApp.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B13 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B14 /* CaptureCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCoordinator.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B15 /* SelectionOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOverlayWindow.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B16 /* PreviewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindowController.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B17 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B18 /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B19 /* BackgroundCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCatalog.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B1A /* ImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B1C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D4E5F60718293A4B72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D4E5F60718293A4B02 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B04 /* QwikShots */,
+				A1B2C3D4E5F60718293A4B06 /* Resources */,
+				A1B2C3D4E5F60718293A4B03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B10 /* QwikShots.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B04 /* QwikShots */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B11 /* QwikShotsApp.swift */,
+				A1B2C3D4E5F60718293A4B12 /* AppDelegate.swift */,
+				A1B2C3D4E5F60718293A4B13 /* HotKeyManager.swift */,
+				A1B2C3D4E5F60718293A4B14 /* CaptureCoordinator.swift */,
+				A1B2C3D4E5F60718293A4B15 /* SelectionOverlayWindow.swift */,
+				A1B2C3D4E5F60718293A4B05 /* Preview */,
+				A1B2C3D4E5F60718293A4B1B /* Info.plist */,
+			);
+			path = QwikShots;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B05 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B16 /* PreviewWindowController.swift */,
+				A1B2C3D4E5F60718293A4B17 /* PreviewView.swift */,
+				A1B2C3D4E5F60718293A4B18 /* PreviewViewModel.swift */,
+				A1B2C3D4E5F60718293A4B19 /* BackgroundCatalog.swift */,
+				A1B2C3D4E5F60718293A4B1A /* ImageRenderer.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B1C /* Resources */,
+			);
+			path = QwikShots;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D4E5F60718293A4B80 /* QwikShots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5F60718293A4B90 /* Build configuration list for PBXNativeTarget "QwikShots" */;
+			buildPhases = (
+				A1B2C3D4E5F60718293A4B70 /* Sources */,
+				A1B2C3D4E5F60718293A4B71 /* Resources */,
+				A1B2C3D4E5F60718293A4B72 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QwikShots;
+			productName = QwikShots;
+			productReference = A1B2C3D4E5F60718293A4B10 /* QwikShots.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D4E5F60718293A4B01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A1B2C3D4E5F60718293A4B80 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D4E5F60718293A4B93 /* Build configuration list for PBXProject "QwikShots" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D4E5F60718293A4B02;
+			productRefGroup = A1B2C3D4E5F60718293A4B03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5F60718293A4B80 /* QwikShots */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4E5F60718293A4B71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60718293A4B4A /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D4E5F60718293A4B70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60718293A4B40 /* QwikShotsApp.swift in Sources */,
+				A1B2C3D4E5F60718293A4B41 /* AppDelegate.swift in Sources */,
+				A1B2C3D4E5F60718293A4B42 /* HotKeyManager.swift in Sources */,
+				A1B2C3D4E5F60718293A4B43 /* CaptureCoordinator.swift in Sources */,
+				A1B2C3D4E5F60718293A4B44 /* SelectionOverlayWindow.swift in Sources */,
+				A1B2C3D4E5F60718293A4B45 /* PreviewWindowController.swift in Sources */,
+				A1B2C3D4E5F60718293A4B46 /* PreviewView.swift in Sources */,
+				A1B2C3D4E5F60718293A4B47 /* PreviewViewModel.swift in Sources */,
+				A1B2C3D4E5F60718293A4B48 /* BackgroundCatalog.swift in Sources */,
+				A1B2C3D4E5F60718293A4B49 /* ImageRenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4E5F60718293A4B91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QwikShots/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eajr.qwikshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F60718293A4B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QwikShots/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eajr.qwikshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		A1B2C3D4E5F60718293A4B94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F60718293A4B95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D4E5F60718293A4B90 /* Build configuration list for PBXNativeTarget "QwikShots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F60718293A4B91 /* Debug */,
+				A1B2C3D4E5F60718293A4B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A1B2C3D4E5F60718293A4B93 /* Build configuration list for PBXProject "QwikShots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F60718293A4B94 /* Debug */,
+				A1B2C3D4E5F60718293A4B95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3D4E5F60718293A4B01 /* Project object */;
+}
