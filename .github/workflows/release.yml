@@ -135,7 +135,7 @@ jobs:
         env:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: |
-          codesign --force --sign "Developer ID Application: ($APPLE_TEAM_ID)" "$DMG_PATH"
+          codesign --force --timestamp --sign "Developer ID Application" "$DMG_PATH"
 
       - name: Notarize DMG
         env:
