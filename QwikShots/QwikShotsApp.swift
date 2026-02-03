@@ -6,14 +6,23 @@ struct QwikShotsApp: App {
 
     var body: some Scene {
         MenuBarExtra("QwikShots", systemImage: "camera") {
-            Button("Capture (⌘⇧9)") {
+            Button("Capture Area") {
                 appDelegate.startCaptureFromMenu()
             }
+            .keyboardShortcut("9", modifiers: [.command, .shift])
+
+            Button("Settings...") {
+                // TODO: Open settings window
+            }
+            .keyboardShortcut(",", modifiers: .command)
+
             Divider()
-            Button("Quit") {
+
+            Button("Exit") {
                 NSApp.terminate(nil)
             }
+            .keyboardShortcut("q", modifiers: .command)
         }
-        .menuBarExtraStyle(.window)
+        .menuBarExtraStyle(.menu)
     }
 }
