@@ -139,7 +139,7 @@ final class SelectionOverlayView: NSView {
         let scaleY = CGFloat(cgImage.height) / viewSize.height
 
         let menuBarHeight = max(0, screen.frame.maxY - screen.visibleFrame.maxY)
-        let menuBarAdjustment = menuBarHeight * 0.4
+        let menuBarAdjustment = menuBarHeight * 0.7
         let maxY = max(0, viewSize.height - rectInView.size.height)
         let yTopAdjusted = min(maxY, rectInView.origin.y + menuBarAdjustment)
 
