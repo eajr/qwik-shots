@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+env:
+  APP_NAME: QwikShots
+  SCHEME: QwikShots
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build app (unsigned)
+        run: |
+          xcodebuild \
+            -project "$APP_NAME.xcodeproj" \
+            -scheme "$SCHEME" \
+            -configuration Debug \
+            -destination 'platform=macOS,arch=arm64' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Verify build output
+        run: |
+          if [ -d "build/Build/Products/Debug/$APP_NAME.app" ]; then
+            echo "Build successful!"
+            ls -la "build/Build/Products/Debug/"
+          else
+            echo "Build failed - app not found"
+            exit 1
+          fi
