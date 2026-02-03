@@ -1,8 +1,9 @@
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
-	classes = {};
-	objectVersion = 56;
+	classes = {
+	};
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +22,7 @@
 		A1B2C3D4E5F60718293A4B51 /* HotKeyRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */; };
 		A1B2C3D4E5F60718293A4B52 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */; };
 		A1B2C3D4E5F60718293A4B53 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */; };
+		A897249B2F3228E7005849C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A897249A2F3228E7005849C7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyRecorderView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
+		A897249A2F3228E7005849C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5F60718293A4B04 /* QwikShots */,
-				A1B2C3D4E5F60718293A4B06 /* Resources */,
+				A1B2C3D4E5F60718293A4B06 /* QwikShots */,
 				A1B2C3D4E5F60718293A4B03 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,19 +85,9 @@
 				A1B2C3D4E5F60718293A4B05 /* Preview */,
 				A1B2C3D4E5F60718293A4B07 /* Settings */,
 				A1B2C3D4E5F60718293A4B1B /* Info.plist */,
+				A897249A2F3228E7005849C7 /* Assets.xcassets */,
 			);
 			path = QwikShots;
-			sourceTree = "<group>";
-		};
-		A1B2C3D4E5F60718293A4B07 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				A1B2C3D4E5F60718293A4B20 /* SettingsManager.swift */,
-				A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */,
-				A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */,
-				A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		A1B2C3D4E5F60718293A4B05 /* Preview */ = {
@@ -109,12 +102,23 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
-		A1B2C3D4E5F60718293A4B06 /* Resources */ = {
+		A1B2C3D4E5F60718293A4B06 /* QwikShots */ = {
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5F60718293A4B1C /* Resources */,
 			);
 			path = QwikShots;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B07 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B20 /* SettingsManager.swift */,
+				A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */,
+				A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */,
+				A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A897249B2F3228E7005849C7 /* Assets.xcassets in Resources */,
 				A1B2C3D4E5F60718293A4B4A /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +214,7 @@
 		A1B2C3D4E5F60718293A4B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -231,7 +236,7 @@
 		A1B2C3D4E5F60718293A4B92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
