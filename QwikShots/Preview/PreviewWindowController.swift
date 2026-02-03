@@ -1,11 +1,21 @@
 import AppKit
 import SwiftUI
 
+private final class PreviewWindow: NSWindow {
+    override func keyDown(with event: NSEvent) {
+        if event.keyCode == 53 { // escape
+            performClose(nil)
+        } else {
+            super.keyDown(with: event)
+        }
+    }
+}
+
 final class PreviewWindowController: NSWindowController {
     private let viewModel = PreviewViewModel()
 
     init() {
-        let window = NSWindow(
+        let window = PreviewWindow(
             contentRect: NSRect(x: 0, y: 0, width: 900, height: 600),
             styleMask: [.titled, .closable, .resizable, .miniaturizable],
             backing: .buffered,
