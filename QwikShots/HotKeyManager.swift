@@ -30,6 +30,29 @@ final class HotKeyManager {
         }
     }
 
+    func updateHotKey(_ combo: KeyCombo) {
+        // Unregister existing hotkey
+        if let hotKeyRef {
+            UnregisterEventHotKey(hotKeyRef)
+            self.hotKeyRef = nil
+        }
+
+        // Register new hotkey
+        var hotKeyID = EventHotKeyID(
+            signature: "QSHK".fourCharCode,
+            id: 1
+        )
+
+        RegisterEventHotKey(
+            combo.keyCode,
+            combo.modifiers,
+            hotKeyID,
+            GetApplicationEventTarget(),
+            0,
+            &hotKeyRef
+        )
+    }
+
     private func registerHotKey(_ combo: KeyCombo) {
         var eventType = EventTypeSpec(
             eventClass: OSType(kEventClassKeyboard),
@@ -51,19 +74,8 @@ final class HotKeyManager {
             &eventHandler
         )
 
-        var hotKeyID = EventHotKeyID(
-            signature: "QSHK".fourCharCode,
-            id: 1
-        )
-
-        RegisterEventHotKey(
-            combo.keyCode,
-            combo.modifiers,
-            hotKeyID,
-            GetApplicationEventTarget(),
-            0,
-            &hotKeyRef
-        )
+        // Use updateHotKey to register the initial hotkey
+        updateHotKey(combo)
     }
 }
 

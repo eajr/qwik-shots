@@ -2,14 +2,14 @@ import AppKit
 
 final class PreviewViewModel: ObservableObject {
     @Published var availableBackgrounds: [BackgroundOption] = BackgroundCatalog.load()
-    @Published var selectedBackgroundID: String = BackgroundCatalog.defaultBackgroundID
+    @Published var selectedBackgroundID: String
 
-    @Published var padding: Double = 50 { didSet { rebuildRenderedImage() } }
-    @Published var cornerRadius: Double = 16 { didSet { rebuildRenderedImage() } }
-    @Published var shadowEnabled: Bool = true { didSet { rebuildRenderedImage() } }
-    @Published var shadowOpacity: Double = 0.25 { didSet { rebuildRenderedImage() } }
-    @Published var shadowRadius: Double = 18 { didSet { rebuildRenderedImage() } }
-    @Published var shadowOffsetY: Double = 0 { didSet { rebuildRenderedImage() } }
+    @Published var padding: Double { didSet { rebuildRenderedImage() } }
+    @Published var cornerRadius: Double { didSet { rebuildRenderedImage() } }
+    @Published var shadowEnabled: Bool { didSet { rebuildRenderedImage() } }
+    @Published var shadowOpacity: Double { didSet { rebuildRenderedImage() } }
+    @Published var shadowRadius: Double { didSet { rebuildRenderedImage() } }
+    @Published var shadowOffsetY: Double { didSet { rebuildRenderedImage() } }
 
     @Published private(set) var renderedImage: NSImage = NSImage(size: .zero)
 
@@ -20,8 +20,20 @@ final class PreviewViewModel: ObservableObject {
     private var renderWorkItem: DispatchWorkItem?
 
     init() {
-        if let first = availableBackgrounds.first {
-            selectedBackgroundID = first.id
+        let settings = SettingsManager.shared
+
+        // Initialize from settings
+        self.padding = settings.defaultPadding
+        self.cornerRadius = settings.defaultCornerRadius
+        self.selectedBackgroundID = settings.defaultBackgroundID
+        self.shadowEnabled = settings.defaultShadowEnabled
+        self.shadowOpacity = settings.defaultShadowOpacity
+        self.shadowRadius = settings.defaultShadowRadius
+        self.shadowOffsetY = settings.defaultShadowOffsetY
+
+        // Validate background ID exists
+        if !availableBackgrounds.contains(where: { $0.id == selectedBackgroundID }) {
+            selectedBackgroundID = availableBackgrounds.first?.id ?? BackgroundCatalog.defaultBackgroundID
         }
     }
 
@@ -120,10 +132,6 @@ final class PreviewViewModel: ObservableObject {
         renderedImage = image
         return image
     }
-}
-
-enum DefaultsKeys {
-    static let lastSaveDirectory = "QwikShots.lastSaveDirectory"
 }
 
 struct ShadowOptions {

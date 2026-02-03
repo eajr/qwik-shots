@@ -32,9 +32,8 @@ final class CaptureCoordinator: NSObject {
     // Cropping is handled directly from the frozen image in SelectionOverlayView.
 
     private func showPreview(with image: NSImage) {
-        if previewWindowController == nil {
-            previewWindowController = PreviewWindowController()
-        }
+        // Create a new controller each time to pick up current default settings
+        previewWindowController = PreviewWindowController()
         previewWindowController?.show(with: image)
     }
 

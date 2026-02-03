@@ -12,7 +12,7 @@ struct QwikShotsApp: App {
             .keyboardShortcut("9", modifiers: [.command, .shift])
 
             Button("Settings...") {
-                // TODO: Open settings window
+                appDelegate.showSettings()
             }
             .keyboardShortcut(",", modifiers: .command)
 

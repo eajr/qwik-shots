@@ -17,6 +17,10 @@
 		A1B2C3D4E5F60718293A4B48 /* BackgroundCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B19 /* BackgroundCatalog.swift */; };
 		A1B2C3D4E5F60718293A4B49 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B1A /* ImageRenderer.swift */; };
 		A1B2C3D4E5F60718293A4B4A /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B1C /* Resources */; };
+		A1B2C3D4E5F60718293A4B50 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B20 /* SettingsManager.swift */; };
+		A1B2C3D4E5F60718293A4B51 /* HotKeyRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */; };
+		A1B2C3D4E5F60718293A4B52 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */; };
+		A1B2C3D4E5F60718293A4B53 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		A1B2C3D4E5F60718293A4B1A /* ImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B1C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B20 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyRecorderView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +80,21 @@
 				A1B2C3D4E5F60718293A4B14 /* CaptureCoordinator.swift */,
 				A1B2C3D4E5F60718293A4B15 /* SelectionOverlayWindow.swift */,
 				A1B2C3D4E5F60718293A4B05 /* Preview */,
+				A1B2C3D4E5F60718293A4B07 /* Settings */,
 				A1B2C3D4E5F60718293A4B1B /* Info.plist */,
 			);
 			path = QwikShots;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60718293A4B07 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B20 /* SettingsManager.swift */,
+				A1B2C3D4E5F60718293A4B21 /* HotKeyRecorderView.swift */,
+				A1B2C3D4E5F60718293A4B22 /* SettingsView.swift */,
+				A1B2C3D4E5F60718293A4B23 /* SettingsWindowController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		A1B2C3D4E5F60718293A4B05 /* Preview */ = {
@@ -176,6 +196,10 @@
 				A1B2C3D4E5F60718293A4B47 /* PreviewViewModel.swift in Sources */,
 				A1B2C3D4E5F60718293A4B48 /* BackgroundCatalog.swift in Sources */,
 				A1B2C3D4E5F60718293A4B49 /* ImageRenderer.swift in Sources */,
+				A1B2C3D4E5F60718293A4B50 /* SettingsManager.swift in Sources */,
+				A1B2C3D4E5F60718293A4B51 /* HotKeyRecorderView.swift in Sources */,
+				A1B2C3D4E5F60718293A4B52 /* SettingsView.swift in Sources */,
+				A1B2C3D4E5F60718293A4B53 /* SettingsWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
