@@ -22,16 +22,6 @@ Menu‑bar screenshot tool for macOS. Press `⌘⇧9`, drag to select, then edit
 - **Copy** copies the edited image to clipboard and closes the preview.
 - **Save…** lets you choose a destination and remembers the last folder.
 
-## Background assets (optional)
-
-Download CC0 backgrounds from Wikimedia Commons:
-
-```bash
-scripts/fetch_backgrounds.sh
-```
-
-The app loads any images placed in `QwikShots/Resources/Backgrounds` at launch. License details are in `LICENSES.md`.
-
 ## Notes
 
 - The app is a menu‑bar‑only agent (`LSUIElement = true`), so it won’t appear in the Dock.
